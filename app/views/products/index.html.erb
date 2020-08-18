@@ -1,0 +1,19 @@
+<h1>
+<%= link_to "Back to Categories", root_path %> <br><br>
+<%= @category.title %> Products
+</h1>
+
+<ol>
+<% @products.each do |product| %>
+<li>
+    <%= product.title %> (<%= product.price %>)
+
+    <ul>
+        <%product.variants.each do |variant| %>
+            <li><%= variant.title %> (<%= variant.price %>)</li>
+        <% end %>
+    </ul>
+
+</li>
+<% end %>
+</ol>

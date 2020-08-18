@@ -2,8 +2,8 @@
 <ul>
     <% @categories.each do |category|%>
         <li>
-        <%= category.title %>
-        (<%= category.products.count %> products)
+            <%= link_to category.title, category_products_path(category) %>
+            (<%= category.products.count %> products)
         </li>
     <%end%>
 </ul>
